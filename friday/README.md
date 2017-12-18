@@ -6,12 +6,12 @@ In order to meet the seat requirements (min=3, max=5), a bottom up dynamic progr
 
 
 
-##Dynamic Programming Approach
+## Dynamic Programming Approach
 My first approach was to take the total number of employees and apply a modulus function for each table size. During unit testing, I quickly realized that the solution would not work. 
 
 The second approach was to use bottom up dynamic programming. The solution was to solve how many tables were needed for zero people (SUM[0]), one person (SUM[1]), two people (SUM[2]), all the way until the the total. This was done for each table size and SUM[i] was used to store how many tables were needed. A separate array R[] was also used to keep track of the table size.
 
-###Pseudocode
+### Pseudocode
 
 ```
 Given Inputs: 
@@ -33,6 +33,6 @@ For table_index = 0 to tables length
 				Set R[i] = table_index
 ```
 
-##Running the application
+## Running the application
 
 To run the application navigate to root of the application and run a `chmod 755 run.sh`. To build test and run the application `./run.sh`.
