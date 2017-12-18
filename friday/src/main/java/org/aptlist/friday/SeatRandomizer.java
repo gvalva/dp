@@ -49,10 +49,10 @@ public class SeatRandomizer {
 		int sum;
 		for (tableSizeIndex = 0; tableSizeIndex < tableSizes.length; tableSizeIndex++) {
 			for (sum = 1; sum <= total; sum++) {
-				int valueOfCoin = tableSizes[tableSizeIndex];
-				
-				if ((sum >= valueOfCoin) && (S[sum - valueOfCoin] + 1 < S[sum])) {
-					S[sum] = S[sum - valueOfCoin] + 1;
+				int sizeOfTable = tableSizes[tableSizeIndex];
+
+				if ((sum >= sizeOfTable) && (S[sum - sizeOfTable] + 1 < S[sum])) {
+					S[sum] = S[sum - sizeOfTable] + 1;
 					R[sum] = tableSizeIndex;
 				}
 			}
