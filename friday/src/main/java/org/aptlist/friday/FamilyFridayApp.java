@@ -1,11 +1,10 @@
 package org.aptlist.friday;
 
-import java.io.File;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
-
-import org.apache.commons.io.FileUtils;
 
 public class FamilyFridayApp {
 
@@ -29,7 +28,7 @@ public class FamilyFridayApp {
 
 	protected void run(String fileName) throws Exception {
 
-		familyList = FileUtils.readLines(new File(fileName), Charset.defaultCharset());
+		familyList = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8);
 		int total = familyList.size();
 
 		SeatRandomizer randomizer = new SeatRandomizer();
