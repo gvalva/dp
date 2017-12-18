@@ -22,8 +22,9 @@ public class SeatRandomizer {
 		// create n tables of size 3, m tables of size 5
 		while (resultIndex != 0) {
 			int tableSizeIndex = R[resultIndex];
-			tableList.add(new Table(tableSizes[tableSizeIndex]));
-			resultIndex = resultIndex - tableSizes[tableSizeIndex];
+			int size = tableSizes[tableSizeIndex];
+			tableList.add(new Table(size));
+			resultIndex = resultIndex - size;
 		}
 
 		return tableList;
@@ -48,11 +49,11 @@ public class SeatRandomizer {
 		int sum;
 		for (tableSizeIndex = 0; tableSizeIndex < tableSizes.length; tableSizeIndex++) {
 			for (sum = 1; sum <= total; sum++) {
-				if (sum >= tableSizes[tableSizeIndex]) {
-					if (S[sum - tableSizes[tableSizeIndex]] + 1 < S[sum]) {
-						S[sum] = S[sum - tableSizes[tableSizeIndex]] + 1;
-						R[sum] = tableSizeIndex;
-					}
+				int valueOfCoin = tableSizes[tableSizeIndex];
+				
+				if ((sum >= valueOfCoin) && (S[sum - valueOfCoin] + 1 < S[sum])) {
+					S[sum] = S[sum - valueOfCoin] + 1;
+					R[sum] = tableSizeIndex;
 				}
 			}
 		}
