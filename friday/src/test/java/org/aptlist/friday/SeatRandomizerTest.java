@@ -9,9 +9,9 @@ import org.junit.Test;
 
 public class SeatRandomizerTest {
 
-	private static final int[] TABLE_SIZES = new int[] { 3, 5 };
 	private static final int TABLE_SIZE_5 = 5;
 	private static final int TABLE_SIZE_3 = 3;
+	private static final int[] TABLE_SIZES = new int[] { TABLE_SIZE_3, TABLE_SIZE_5 };
 
 	@Test
 	public void testCreateTables() {
@@ -66,7 +66,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith3Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0 };
+		int[] expected = new int[] { -1, -1, -1, 3 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 3;
@@ -76,7 +76,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith5Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 5;
@@ -86,7 +86,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith6Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 6;
@@ -96,7 +96,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith8Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 8;
@@ -106,7 +106,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith9Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 9;
@@ -116,7 +116,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith10Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 10;
@@ -126,7 +126,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith11Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 11;
@@ -136,7 +136,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith12Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 12;
@@ -146,7 +146,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith13Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 13;
@@ -156,7 +156,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith14Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3, 5, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 14;
@@ -166,7 +166,7 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testReturnSumResultMatrixWith15Guests() {
-		int[] expected = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1, 1, 1 };
+		int[] expected = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3, 5, 5, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		int total = 15;
@@ -176,12 +176,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith15Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1, 1, 1 };
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3, 5, 5, 5 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -208,12 +208,11 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith14Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1, 1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3, 5, 5 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -238,13 +237,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith13Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0, 1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3, 5 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 		List<Table> actualTableList = null;
 
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -269,12 +267,11 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith12Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1, 0 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5, 3 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -299,13 +296,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith11Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1, 1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5, 5 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -330,13 +326,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith10Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0, 1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3, 5 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -361,13 +356,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith9Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1, 0 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5, 3 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -392,13 +386,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith8Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1, 1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1, 5 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -423,22 +416,20 @@ public class SeatRandomizerTest {
 
 	@Test(expected = Exception.class)
 	public void testCreateTablesWith7Guests() throws Exception {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0, -1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3, -1 };
 		SeatRandomizer randomizer = new SeatRandomizer();
-		randomizer.createTables(R, TABLE_SIZES);
+		randomizer.createTables(R);
 
 	}
 
 	@Test
 	public void testCreateTablesWith6Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1, 0 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5, 3 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -463,13 +454,12 @@ public class SeatRandomizerTest {
 
 	@Test
 	public void testCreateTablesWith5Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, -1, 1 };
-
+		int[] R = new int[] { -1, -1, -1, 3, -1, 5 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -494,20 +484,19 @@ public class SeatRandomizerTest {
 
 	@Test(expected = Exception.class)
 	public void testCreateTablesWith4Guests() throws Exception {
-		int[] R = new int[] { -1, -1, -1, 0, -1 };
+		int[] R = new int[] { -1, -1, -1, 3, -1 };
 		SeatRandomizer randomizer = new SeatRandomizer();
-		randomizer.createTables(R, TABLE_SIZES);
+		randomizer.createTables(R);
 
 	}
 
 	@Test
 	public void testCreateTablesWith3Guests() {
-		int[] R = new int[] { -1, -1, -1, 0, };
-
+		int[] R = new int[] { -1, -1, -1, 3 };
 		SeatRandomizer randomizer = new SeatRandomizer();
 		List<Table> actualTableList = null;
 		try {
-			actualTableList = randomizer.createTables(R, TABLE_SIZES);
+			actualTableList = randomizer.createTables(R);
 		} catch (Exception e) {
 			Assert.fail("create table should not throw exception");
 		}
@@ -533,9 +522,8 @@ public class SeatRandomizerTest {
 	@Test(expected = Exception.class)
 	public void testCreateTablesWith2Guests() throws Exception {
 		int[] R = new int[] { -1, -1, -1 };
-
 		SeatRandomizer randomizer = new SeatRandomizer();
-		randomizer.createTables(R, TABLE_SIZES);
+		randomizer.createTables(R);
 	}
 
 	@Test(expected = Exception.class)
@@ -543,6 +531,6 @@ public class SeatRandomizerTest {
 		int[] R = new int[] { -1, -1 };
 
 		SeatRandomizer randomizer = new SeatRandomizer();
-		randomizer.createTables(R, TABLE_SIZES);
+		randomizer.createTables(R);
 	}
 }

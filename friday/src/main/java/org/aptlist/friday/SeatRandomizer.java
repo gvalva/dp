@@ -7,10 +7,10 @@ public class SeatRandomizer {
 
 	public List<Table> createTables(int total, int[] tableSizes) throws Exception {
 		int[] resultArray = returnResultArray(total, tableSizes);
-		return createTables(resultArray, tableSizes);
+		return createTables(resultArray);
 	}
 
-	protected List<Table> createTables(int R[], int[] tableSizes) throws Exception {
+	protected List<Table> createTables(int R[]) throws Exception {
 		if (R[R.length - 1] == -1) {
 			String errMsg = "Not enough employees to meet seat min/max requirements per table.";
 			throw new Exception(errMsg);
@@ -21,8 +21,7 @@ public class SeatRandomizer {
 
 		// create n tables of size 3, m tables of size 5
 		while (resultIndex != 0) {
-			int tableSizeIndex = R[resultIndex];
-			int size = tableSizes[tableSizeIndex];
+			int size = R[resultIndex];
 			tableList.add(new Table(size));
 			resultIndex = resultIndex - size;
 		}
@@ -53,7 +52,7 @@ public class SeatRandomizer {
 
 				if ((sum >= sizeOfTable) && (S[sum - sizeOfTable] + 1 < S[sum])) {
 					S[sum] = S[sum - sizeOfTable] + 1;
-					R[sum] = tableSizeIndex;
+					R[sum] = sizeOfTable;
 				}
 			}
 		}
